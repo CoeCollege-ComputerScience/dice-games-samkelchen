@@ -33,8 +33,10 @@ def round(currentPlayer):
         print(f"Player {currentPlayer} rolled {new}")
 
     if new == highest:
+        highest = 0
+        currentPlayer = swap(currentPlayer)
         print("It's a tie! No points awarded this round.")
-        return "0", highest
+        return currentPlayer, highest
     
     currentPlayer = swap(currentPlayer)
     print(f"Player {currentPlayer} wins the round!")
